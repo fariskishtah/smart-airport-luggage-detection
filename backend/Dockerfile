@@ -24,7 +24,7 @@ RUN pip install --no-cache-dir --upgrade pip && \
 COPY src /app/src
 COPY configs /app/configs
 COPY models/deployment /app/models/deployment
-COPY models/yolo11n.pt /app/models/yolo11n.pt
+COPY demo/input_airport_luggage.mp4 /app/demo/input_airport_luggage.mp4
 COPY backend /app/backend
 
 # Create storage directories
