@@ -98,7 +98,7 @@ def run_video_analysis(
             e = line_end_norm or [0.55, 0.92]
             line_start = (round(s[0] * width), round(s[1] * height))
             line_end = (round(e[0] * width), round(e[1] * height))
-            counter = LineCounter(line_start, line_end, direction=direction if direction in ("any", "positive", "negative") else "any", deadband_px=8.0, min_track_age=min_track_age)
+            counter = LineCounter(line_start, line_end, direction=direction if direction in ("any", "positive", "negative") else "any", deadband_px=3.0, min_track_age=min_track_age)
 
     # Initialize model
     model_path = _resolve_model_path(model_name)
@@ -260,6 +260,7 @@ def run_video_analysis(
         "in_count": in_count,
         "out_count": out_count,
         "class_counts": class_counts,
+        "counted_track_ids": sorted(counter.counted_track_ids) if counter is not None else sorted(all_seen_track_ids),
         "events": crossing_events,
         "events_count": len(crossing_events),
         "video_width": width,
