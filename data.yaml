@@ -1,0 +1,9 @@
+path: data/processed
+train: train/images
+val: valid/images
+test: test/images
+names:
+  0: backpack
+  1: handbag
+  2: suitcase
+

@@ -1,0 +1,22 @@
+{
+  "dataset": "Open Images V7 annotations / V5 dense split files",
+  "annotation_license": "CC BY 4.0",
+  "seed": 42,
+  "requested_images": 600,
+  "downloaded_images": 396,
+  "split_images": {
+    "train": 277,
+    "valid": 79,
+    "test": 40
+  },
+  "class_instances": {
+    "suitcase": 108,
+    "handbag": 293,
+    "backpack": 121
+  },
+  "failures": [],
+  "source_splits": [
+    "validation",
+    "test"
+  ]
+}

@@ -1,0 +1,4 @@
+event_id,video,frame,timestamp,track_id,class,class_name,confidence,direction,event_type,centroid_x,centroid_y,model,tracker,snapshot
+event_001,demo/benchmark/pexels_27778466_source.mp4,31,1.24,1,suitcase,suitcase,0.8736,negative,line_crossing,1384,778,models/deployment/yolo11n_coco.pt,bytetrack,outputs/benchmarks/pexels_27778466/events/event_001.jpg
+event_002,demo/benchmark/pexels_27778466_source.mp4,135,5.4,2,suitcase,suitcase,0.6107,negative,line_crossing,1489,683,models/deployment/yolo11n_coco.pt,bytetrack,outputs/benchmarks/pexels_27778466/events/event_002.jpg
+event_003,demo/benchmark/pexels_27778466_source.mp4,205,8.2,49,suitcase,suitcase,0.446,negative,line_crossing,1342,778,models/deployment/yolo11n_coco.pt,bytetrack,outputs/benchmarks/pexels_27778466/events/event_003.jpg

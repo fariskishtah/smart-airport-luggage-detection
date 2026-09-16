@@ -1,0 +1,36 @@
+project:
+  name: Smart Airport Luggage Detection System
+model:
+  path: models/deployment/yolo11n_coco.pt
+  confidence: 0.25
+  iou: 0.50
+  image_size: 640
+  allowed_classes: [backpack, handbag, suitcase]
+tracking:
+  tracker: bytetrack
+  config: configs/bytetrack_luggage.yaml
+  persist: true
+counting:
+  enabled: true
+  mode: line
+  line_start: [0.55, 0.20]
+  line_end: [0.55, 0.92]
+  zone: [[0.35, 0.30], [0.75, 0.30], [0.75, 0.85], [0.35, 0.85]]
+  coordinates: normalized
+  anchor: bottom_center
+  direction: any
+  deadband_px: 8
+  min_track_age: 3
+  cooldown_frames: 0
+video:
+  input: demo/input_airport_luggage.mp4
+  output: outputs/demo_output.mp4
+  save_output: true
+  show_fps: true
+runtime:
+  device: auto
+  save_video: true
+  save_json: true
+  save_csv: true
+  save_events: true
+  save_snapshots: true

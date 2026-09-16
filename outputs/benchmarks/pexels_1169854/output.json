@@ -1,0 +1,62 @@
+{
+  "source": "demo/benchmark/pexels_1169854_source.mp4",
+  "output": "outputs/benchmarks/pexels_1169854/output.mp4",
+  "frames": 505,
+  "source_frames": 505,
+  "elapsed_seconds": 13.719,
+  "processing_fps": 36.81,
+  "average_inference_latency_ms": 16.172,
+  "peak_process_memory_mb": 457.5,
+  "model": "models/yolo11n.pt",
+  "tracker": "bytetrack",
+  "counting_mode": "line",
+  "total_count": 3,
+  "in_count": 3,
+  "out_count": 0,
+  "class_counts": {
+    "suitcase": 3
+  },
+  "counted_track_ids": [
+    2,
+    3,
+    19
+  ],
+  "crossing_events": [
+    {
+      "event_number": 1,
+      "frame": 83,
+      "timestamp_seconds": 2.769,
+      "track_id": 2,
+      "class_name": "suitcase",
+      "confidence": 0.7514,
+      "direction": "positive",
+      "centroid_x": 830,
+      "centroid_y": 736,
+      "snapshot": "outputs/benchmarks/pexels_1169854/events/event_001.jpg"
+    },
+    {
+      "event_number": 2,
+      "frame": 304,
+      "timestamp_seconds": 10.143,
+      "track_id": 3,
+      "class_name": "suitcase",
+      "confidence": 0.8392,
+      "direction": "positive",
+      "centroid_x": 707,
+      "centroid_y": 789,
+      "snapshot": "outputs/benchmarks/pexels_1169854/events/event_002.jpg"
+    },
+    {
+      "event_number": 3,
+      "frame": 340,
+      "timestamp_seconds": 11.345,
+      "track_id": 19,
+      "class_name": "suitcase",
+      "confidence": 0.4102,
+      "direction": "positive",
+      "centroid_x": 1045,
+      "centroid_y": 1009,
+      "snapshot": "outputs/benchmarks/pexels_1169854/events/event_003.jpg"
+    }
+  ]
+}

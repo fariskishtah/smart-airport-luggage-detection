@@ -1,0 +1,36 @@
+{
+  "source": "demo/input_airport_luggage.mp4",
+  "output": "outputs/benchmarks/yolo11s_main/output.mp4",
+  "frames": 447,
+  "source_frames": 447,
+  "elapsed_seconds": 12.157,
+  "processing_fps": 36.769,
+  "average_inference_latency_ms": 24.077,
+  "peak_process_memory_mb": 498.7,
+  "model": "models/yolo11s_luggage_best.pt",
+  "tracker": "bytetrack",
+  "counting_mode": "line",
+  "total_count": 1,
+  "in_count": 0,
+  "out_count": 1,
+  "class_counts": {
+    "suitcase": 1
+  },
+  "counted_track_ids": [
+    12
+  ],
+  "crossing_events": [
+    {
+      "event_number": 1,
+      "frame": 123,
+      "timestamp_seconds": 4.1,
+      "track_id": 12,
+      "class_name": "suitcase",
+      "confidence": 0.2835,
+      "direction": "negative",
+      "centroid_x": 538,
+      "centroid_y": 540,
+      "snapshot": "outputs/benchmarks/yolo11s_main/events/event_001.jpg"
+    }
+  ]
+}

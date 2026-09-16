@@ -1,0 +1,4 @@
+event_number,frame,timestamp_seconds,track_id,class_name,confidence,direction,centroid_x,centroid_y,snapshot
+1,83,2.769,2,suitcase,0.7514,positive,830,736,outputs/benchmarks/pexels_1169854/events/event_001.jpg
+2,304,10.143,3,suitcase,0.8392,positive,707,789,outputs/benchmarks/pexels_1169854/events/event_002.jpg
+3,340,11.345,19,suitcase,0.4102,positive,1045,1009,outputs/benchmarks/pexels_1169854/events/event_003.jpg

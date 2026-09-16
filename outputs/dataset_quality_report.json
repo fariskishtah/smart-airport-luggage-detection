@@ -1,0 +1,28 @@
+{
+  "images": 396,
+  "labels": 396,
+  "instances": 522,
+  "empty_labels": [],
+  "missing_labels": [],
+  "broken_images": [],
+  "invalid_annotations": [],
+  "duplicate_images": [],
+  "duplicate_annotations": [],
+  "extreme_aspect_ratio_images": [],
+  "class_instances": {
+    "backpack": 121,
+    "handbag": 293,
+    "suitcase": 108
+  },
+  "split_images": {
+    "train": 277,
+    "valid": 79,
+    "test": 40
+  },
+  "split_instances": {
+    "train": 354,
+    "valid": 123,
+    "test": 45
+  },
+  "valid": true
+}

@@ -1,0 +1,75 @@
+{
+  "source": "demo/input_airport_luggage.mp4",
+  "output": "outputs/benchmarks/botsort_main/output.mp4",
+  "frames": 447,
+  "source_frames": 447,
+  "elapsed_seconds": 13.692,
+  "processing_fps": 32.646,
+  "average_inference_latency_ms": 27.633,
+  "peak_process_memory_mb": 457.5,
+  "model": "models/yolo11n.pt",
+  "tracker": "botsort",
+  "counting_mode": "line",
+  "total_count": 4,
+  "in_count": 3,
+  "out_count": 1,
+  "class_counts": {
+    "suitcase": 4
+  },
+  "counted_track_ids": [
+    1,
+    2,
+    13,
+    39
+  ],
+  "crossing_events": [
+    {
+      "event_number": 1,
+      "frame": 80,
+      "timestamp_seconds": 2.667,
+      "track_id": 2,
+      "class_name": "suitcase",
+      "confidence": 0.4487,
+      "direction": "positive",
+      "centroid_x": 503,
+      "centroid_y": 137,
+      "snapshot": "outputs/benchmarks/botsort_main/events/event_001.jpg"
+    },
+    {
+      "event_number": 2,
+      "frame": 120,
+      "timestamp_seconds": 4.0,
+      "track_id": 1,
+      "class_name": "suitcase",
+      "confidence": 0.9227,
+      "direction": "negative",
+      "centroid_x": 537,
+      "centroid_y": 534,
+      "snapshot": "outputs/benchmarks/botsort_main/events/event_002.jpg"
+    },
+    {
+      "event_number": 3,
+      "frame": 161,
+      "timestamp_seconds": 5.367,
+      "track_id": 13,
+      "class_name": "suitcase",
+      "confidence": 0.7138,
+      "direction": "positive",
+      "centroid_x": 518,
+      "centroid_y": 129,
+      "snapshot": "outputs/benchmarks/botsort_main/events/event_003.jpg"
+    },
+    {
+      "event_number": 4,
+      "frame": 334,
+      "timestamp_seconds": 11.133,
+      "track_id": 39,
+      "class_name": "suitcase",
+      "confidence": 0.4797,
+      "direction": "positive",
+      "centroid_x": 518,
+      "centroid_y": 166,
+      "snapshot": "outputs/benchmarks/botsort_main/events/event_004.jpg"
+    }
+  ]
+}

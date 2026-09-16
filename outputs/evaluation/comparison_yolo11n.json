@@ -1,0 +1,81 @@
+{
+  "protocol": "Fixed held-out 40-image test set; precision/recall at confidence 0.25; 101-point interpolated AP",
+  "baseline": {
+    "model": "models/yolo11n.pt",
+    "images": 40,
+    "ground_truth_instances": 45,
+    "precision_at_conf_0.25": 0.4411764705882353,
+    "recall_at_conf_0.25": 0.3333333333333333,
+    "map50": 0.39461853602721947,
+    "map50_95": 0.2850302283087071,
+    "fps": 6.790791056803747,
+    "latency_ms": 147.2582489484921,
+    "size_mb": 5.613764,
+    "parameters": 2616248,
+    "per_class": {
+      "backpack": {
+        "ground_truth": 7,
+        "predictions_at_conf_0.25": 4,
+        "precision_at_0.25": 0.25,
+        "recall_at_0.25": 0.14285714285714285,
+        "ap50": 0.296999502116007,
+        "map50_95": 0.15255008742853107
+      },
+      "handbag": {
+        "ground_truth": 24,
+        "predictions_at_conf_0.25": 3,
+        "precision_at_0.25": 0.6666666666666666,
+        "recall_at_0.25": 0.08333333333333333,
+        "ap50": 0.18458259495142731,
+        "map50_95": 0.14437594014770525
+      },
+      "suitcase": {
+        "ground_truth": 14,
+        "predictions_at_conf_0.25": 27,
+        "precision_at_0.25": 0.4444444444444444,
+        "recall_at_0.25": 0.8571428571428571,
+        "ap50": 0.7022735110142241,
+        "map50_95": 0.5581646573498851
+      }
+    }
+  },
+  "finetuned": {
+    "model": "models/yolo11n_luggage_best.pt",
+    "images": 40,
+    "ground_truth_instances": 45,
+    "precision_at_conf_0.25": 0.5909090909090909,
+    "recall_at_conf_0.25": 0.5777777777777777,
+    "map50": 0.5786190317390134,
+    "map50_95": 0.46519934555077097,
+    "fps": 6.200813019401225,
+    "latency_ms": 161.26917500514537,
+    "size_mb": 5.440282,
+    "parameters": 2582737,
+    "per_class": {
+      "backpack": {
+        "ground_truth": 7,
+        "predictions_at_conf_0.25": 9,
+        "precision_at_0.25": 0.3333333333333333,
+        "recall_at_0.25": 0.42857142857142855,
+        "ap50": 0.4370596805525577,
+        "map50_95": 0.36095151587115293
+      },
+      "handbag": {
+        "ground_truth": 24,
+        "predictions_at_conf_0.25": 29,
+        "precision_at_0.25": 0.6551724137931034,
+        "recall_at_0.25": 0.7916666666666666,
+        "ap50": 0.8439657462038488,
+        "map50_95": 0.6995600979100224
+      },
+      "suitcase": {
+        "ground_truth": 14,
+        "predictions_at_conf_0.25": 6,
+        "precision_at_0.25": 0.6666666666666666,
+        "recall_at_0.25": 0.2857142857142857,
+        "ap50": 0.45483166846063383,
+        "map50_95": 0.33508642287113755
+      }
+    }
+  }
+}

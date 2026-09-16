@@ -1,0 +1,83 @@
+{
+  "source": "demo/benchmark/pexels_27778466_source.mp4",
+  "output": "outputs/benchmarks/pexels_27778466/output.mp4",
+  "frames": 316,
+  "source_frames": 316,
+  "elapsed_seconds": 15.899,
+  "processing_fps": 19.876,
+  "average_inference_latency_ms": 29.088,
+  "peak_process_memory_mb": 561.7,
+  "model": "models/deployment/yolo11n_coco.pt",
+  "tracker": "bytetrack",
+  "counting_mode": "line",
+  "total_count": 3,
+  "in_count": 0,
+  "out_count": 3,
+  "class_counts": {
+    "suitcase": 3
+  },
+  "counted_track_ids": [
+    1,
+    2,
+    49
+  ],
+  "crossing_events": [
+    {
+      "event_id": "event_001",
+      "event_number": 1,
+      "video": "demo/benchmark/pexels_27778466_source.mp4",
+      "frame": 31,
+      "timestamp": 1.24,
+      "timestamp_seconds": 1.24,
+      "track_id": 1,
+      "class": "suitcase",
+      "class_name": "suitcase",
+      "confidence": 0.8736,
+      "direction": "negative",
+      "event_type": "line_crossing",
+      "centroid_x": 1384,
+      "centroid_y": 778,
+      "model": "models/deployment/yolo11n_coco.pt",
+      "tracker": "bytetrack",
+      "snapshot": "outputs/benchmarks/pexels_27778466/events/event_001.jpg"
+    },
+    {
+      "event_id": "event_002",
+      "event_number": 2,
+      "video": "demo/benchmark/pexels_27778466_source.mp4",
+      "frame": 135,
+      "timestamp": 5.4,
+      "timestamp_seconds": 5.4,
+      "track_id": 2,
+      "class": "suitcase",
+      "class_name": "suitcase",
+      "confidence": 0.6107,
+      "direction": "negative",
+      "event_type": "line_crossing",
+      "centroid_x": 1489,
+      "centroid_y": 683,
+      "model": "models/deployment/yolo11n_coco.pt",
+      "tracker": "bytetrack",
+      "snapshot": "outputs/benchmarks/pexels_27778466/events/event_002.jpg"
+    },
+    {
+      "event_id": "event_003",
+      "event_number": 3,
+      "video": "demo/benchmark/pexels_27778466_source.mp4",
+      "frame": 205,
+      "timestamp": 8.2,
+      "timestamp_seconds": 8.2,
+      "track_id": 49,
+      "class": "suitcase",
+      "class_name": "suitcase",
+      "confidence": 0.446,
+      "direction": "negative",
+      "event_type": "line_crossing",
+      "centroid_x": 1342,
+      "centroid_y": 778,
+      "model": "models/deployment/yolo11n_coco.pt",
+      "tracker": "bytetrack",
+      "snapshot": "outputs/benchmarks/pexels_27778466/events/event_003.jpg"
+    }
+  ]
+}

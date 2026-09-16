@@ -1,0 +1,2 @@
+event_number,frame,timestamp_seconds,track_id,class_name,confidence,direction,centroid_x,centroid_y,snapshot
+1,123,4.1,12,suitcase,0.2835,negative,538,540,outputs/benchmarks/yolo11s_main/events/event_001.jpg

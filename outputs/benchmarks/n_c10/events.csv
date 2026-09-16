@@ -1,0 +1,2 @@
+event_number,frame,timestamp_seconds,track_id,class_name,confidence,direction,centroid_x,centroid_y,snapshot
+1,202,6.733,26,handbag,0.1739,positive,517,540,outputs/benchmarks/n_c10/events/event_001.jpg

@@ -1,0 +1,25 @@
+{
+  "model": "models/yolo11n_conservative_best.pt",
+  "split": "test",
+  "images": 40,
+  "precision": 0.646510542879958,
+  "recall": 0.48214285714285715,
+  "map50": 0.5656401150071968,
+  "map50_95": 0.42937577329383186,
+  "class_names": {
+    "0": "backpack",
+    "1": "handbag",
+    "2": "suitcase"
+  },
+  "per_class_map50_95": {
+    "backpack": 0.2489184911157695,
+    "handbag": 0.7544533753668351,
+    "suitcase": 0.2847554533988908
+  },
+  "speed_ms_per_image": {
+    "preprocess": 0.13941869838163257,
+    "inference": 16.845902078785002,
+    "loss": 0.0013832817785441875,
+    "postprocess": 3.1178729026578367
+  }
+}

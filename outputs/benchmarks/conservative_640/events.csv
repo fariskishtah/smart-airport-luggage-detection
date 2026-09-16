@@ -1,0 +1,2 @@
+event_number,frame,timestamp_seconds,track_id,class_name,confidence,direction,centroid_x,centroid_y,snapshot
+1,121,4.033,2,handbag,0.5135,negative,540,540,outputs/benchmarks/conservative_640/events/event_001.jpg

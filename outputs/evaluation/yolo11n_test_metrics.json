@@ -1,0 +1,25 @@
+{
+  "model": "models/yolo11n_luggage_best.pt",
+  "split": "test",
+  "images": 40,
+  "precision": 0.8528003234265409,
+  "recall": 0.40277777777777773,
+  "map50": 0.5737621719035765,
+  "map50_95": 0.4463521932070084,
+  "class_names": {
+    "0": "backpack",
+    "1": "handbag",
+    "2": "suitcase"
+  },
+  "per_class_map50_95": {
+    "backpack": 0.2578352199712793,
+    "handbag": 0.6981685202677147,
+    "suitcase": 0.3830528393820315
+  },
+  "speed_ms_per_image": {
+    "preprocess": 0.031358341220766306,
+    "inference": 17.87316561676562,
+    "loss": 5.936017259955406e-05,
+    "postprocess": 1.4228291809558868
+  }
+}

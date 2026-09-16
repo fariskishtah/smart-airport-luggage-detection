@@ -1,0 +1,5 @@
+event_id,video,frame,timestamp,track_id,class,class_name,confidence,direction,event_type,centroid_x,centroid_y,model,tracker,snapshot
+event_001,demo/input_airport_luggage.mp4,80,2.667,2,suitcase,suitcase,0.4487,positive,line_crossing,503,137,models/deployment/yolo11n_coco.pt,bytetrack,outputs/events/event_001.jpg
+event_002,demo/input_airport_luggage.mp4,120,4.0,1,suitcase,suitcase,0.9227,negative,line_crossing,537,535,models/deployment/yolo11n_coco.pt,bytetrack,outputs/events/event_002.jpg
+event_003,demo/input_airport_luggage.mp4,161,5.367,9,suitcase,suitcase,0.7138,positive,line_crossing,519,129,models/deployment/yolo11n_coco.pt,bytetrack,outputs/events/event_003.jpg
+event_004,demo/input_airport_luggage.mp4,334,11.133,41,suitcase,suitcase,0.4797,positive,line_crossing,518,166,models/deployment/yolo11n_coco.pt,bytetrack,outputs/events/event_004.jpg

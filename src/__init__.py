@@ -1,0 +1,2 @@
+"""Smart luggage detection package."""
+

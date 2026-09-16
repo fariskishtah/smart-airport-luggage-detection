@@ -1,0 +1,19 @@
+{
+  "source": "demo/input_airport_luggage.mp4",
+  "output": "outputs/benchmarks/s_c10/output.mp4",
+  "frames": 447,
+  "source_frames": 447,
+  "elapsed_seconds": 12.52,
+  "processing_fps": 35.704,
+  "average_inference_latency_ms": 24.92,
+  "peak_process_memory_mb": 483.9,
+  "model": "models/yolo11s_luggage_best.pt",
+  "tracker": "bytetrack",
+  "counting_mode": "line",
+  "total_count": 0,
+  "in_count": 0,
+  "out_count": 0,
+  "class_counts": {},
+  "counted_track_ids": [],
+  "crossing_events": []
+}

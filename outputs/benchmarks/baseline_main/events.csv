@@ -1,0 +1,3 @@
+event_number,frame,timestamp_seconds,track_id,class_name,confidence,direction,centroid_x,centroid_y,snapshot
+1,120,4.0,2,suitcase,0.9116,negative,537,539,outputs/benchmarks/baseline_main/events/event_001.jpg
+2,333,11.1,36,suitcase,0.6382,positive,516,166,outputs/benchmarks/baseline_main/events/event_002.jpg

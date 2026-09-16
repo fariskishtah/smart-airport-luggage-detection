@@ -1,0 +1,46 @@
+# Virtual environments
+.venv/
+env/
+venv/
+ENV/
+
+# Python caches & compiled bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# OS metadata
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Experiment runs
+runs/
+
+# Large Datasets (Raw & Processed)
+data/raw/*
+data/processed/*
+data/train/*
+data/valid/*
+data/test/*
+!data/**/.gitkeep
+
+# Generated Media / MP4 files (Use Git LFS for GitHub repository if required)
+outputs/**/*.mp4
+outputs/*.mp4
+demo/*.mp4
+demo/benchmark/*.mp4
+
+# Model Weights (Use Git LFS if committing weights to GitHub)
+*.pt
+models/*.pt
+models/**/*.pt
+
+# Logs & Secrets
+*.log
+.env
