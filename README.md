@@ -307,9 +307,63 @@ python src/train.py --config configs/train_small.yaml
 │   ├── inference_video.py          # Video processing pipeline & CLI
 │   └── utils.py                    # Config, device selection, I/O helpers
 └── tests/
-    ├── test_counter.py             # Geometric counting unit tests
-    └── test_end_to_end.py          # End-to-end integration tests
 ```
+
+---
+
+## 15. Web Deployment (Next.js + FastAPI)
+
+The project includes a decoupled, production-grade cloud architecture for public deployment:
+
+```text
+User Browser
+     │ (1. Direct Video Upload)
+     ▼
+Object Storage (Vercel Blob / S3 / Direct API Upload)
+     │ (2. Video URL & Parameters)
+     ▼
+FastAPI AI Inference Backend (Containerized Docker)
+     │ (3. YOLO11n + ByteTrack + 2D Geometric Crossing)
+     ▼
+Processed H.264 Video + Auditable Events CSV
+     │ (4. Output Upload & Streaming)
+     ▼
+Web Results & Live KPI Dashboard (Next.js on Vercel)
+```
+
+### Full-Stack Local Execution
+
+**1. Start the FastAPI AI Backend:**
+```bash
+source .venv/bin/activate
+uvicorn backend.main:app --host 0.0.0.0 --port 8001
+```
+*Health Check:* `http://127.0.0.1:8001/health`
+
+**2. Start the Next.js Frontend:**
+```bash
+cd web
+npm install
+npm run dev
+```
+*Access Web App:* `http://localhost:3000`
+
+### Docker Container Deployment (Backend)
+```bash
+# Build production Docker image
+docker build -t smart-airport-luggage-backend -f backend/Dockerfile .
+
+# Run container with port forwarding
+docker run -d -p 8000:8000 -e PORT=8000 --name luggage-ai-api smart-airport-luggage-backend
+```
+
+### Vercel Deployment (Frontend)
+The `web/` directory is an autonomous Next.js 14 application. Deploy directly using Vercel CLI or Git integration:
+```bash
+cd web
+vercel
+```
+*Environment Variable:* Set `NEXT_PUBLIC_AI_BACKEND_URL` to your production backend API domain.
 
 ---
 

@@ -36,6 +36,16 @@ outputs/*.mp4
 demo/*.mp4
 demo/benchmark/*.mp4
 
+# Backend Storage uploads & outputs
+backend/storage/uploads/*
+backend/storage/outputs/*
+!backend/storage/**/.gitkeep
+
+# Web dependencies and build
+web/node_modules/
+web/.next/
+web/out/
+
 # Model Weights (Use Git LFS if committing weights to GitHub)
 *.pt
 models/*.pt
@@ -44,3 +54,4 @@ models/**/*.pt
 # Logs & Secrets
 *.log
 .env
+.env*.local
