@@ -35,6 +35,7 @@ outputs/**/*.mp4
 outputs/*.mp4
 demo/*.mp4
 demo/benchmark/*.mp4
+!demo/input_airport_luggage.mp4
 
 # Backend Storage uploads & outputs
 backend/storage/uploads/*
@@ -50,6 +51,7 @@ web/out/
 *.pt
 models/*.pt
 models/**/*.pt
+!models/deployment/yolo11n_coco.pt
 
 # Logs & Secrets
 *.log
