@@ -14,7 +14,7 @@ class AnalysisRequest(BaseModel):
         default="line",
         description="Counting geometry type: 'line' or 'zone'"
     )
-    confidence: float = Field(default=0.25, ge=0.01, le=1.0, description="Detection confidence threshold")
+    confidence: float = Field(default=0.20, ge=0.01, le=1.0, description="Detection confidence threshold")
     iou: float = Field(default=0.50, ge=0.10, le=1.0, description="NMS IoU threshold")
     line_start: Optional[List[float]] = Field(
         default=[0.55, 0.20],

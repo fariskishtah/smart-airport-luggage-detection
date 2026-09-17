@@ -28,7 +28,7 @@ export default function Home() {
     line_start: [0.55, 0.20],
     line_end: [0.55, 0.92],
     direction: "any",
-    confidence: 0.25,
+    confidence: 0.20,
     iou: 0.50,
     min_track_age: 2,
     tracker: "bytetrack",

@@ -55,7 +55,7 @@ async def upload_and_analyze(
     file: UploadFile = File(...),
     mode: str = Form("counting"),
     count_mode: str = Form("line"),
-    confidence: float = Form(0.25),
+    confidence: float = Form(0.20),
     iou: float = Form(0.50),
     line_start: Optional[str] = Form(None),
     line_end: Optional[str] = Form(None),
@@ -129,7 +129,7 @@ async def analyze_demo_clip():
     req = AnalysisRequest(
         mode="counting",
         count_mode="line",
-        confidence=0.25,
+        confidence=0.20,
         iou=0.50,
         line_start=[0.55, 0.20],
         line_end=[0.55, 0.92],
