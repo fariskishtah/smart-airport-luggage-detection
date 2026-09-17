@@ -331,6 +331,12 @@ Processed H.264 Video + Auditable Events CSV
 Web Results & Live KPI Dashboard (Next.js on Vercel)
 ```
 
+### Live Production Deployment
+- **Production Web Application (Vercel):** [https://smart-airport-luggage-web.vercel.app](https://smart-airport-luggage-web.vercel.app)
+- **Production AI Inference Backend (Railway Cloud):** [https://smart-airport-luggage-backend-production.up.railway.app](https://smart-airport-luggage-backend-production.up.railway.app)
+- **Backend Health Check:** [https://smart-airport-luggage-web.vercel.app/health](https://smart-airport-luggage-web.vercel.app/health) (or [direct](https://smart-airport-luggage-backend-production.up.railway.app/health))
+- **Interactive Swagger / OpenAPI Docs:** [https://smart-airport-luggage-backend-production.up.railway.app/docs](https://smart-airport-luggage-backend-production.up.railway.app/docs)
+
 ### Full-Stack Local Execution
 
 **1. Start the FastAPI AI Backend:**
@@ -351,19 +357,14 @@ npm run dev
 ### Docker Container Deployment (Backend)
 ```bash
 # Build production Docker image
-docker build -t smart-airport-luggage-backend -f backend/Dockerfile .
+docker build -t smart-airport-luggage-backend -f Dockerfile .
 
 # Run container with port forwarding
-docker run -d -p 8000:8000 -e PORT=8000 --name luggage-ai-api smart-airport-luggage-backend
+docker run -d -p 8080:8080 -e PORT=8080 --name luggage-ai-api smart-airport-luggage-backend
 ```
 
 ### Vercel Deployment (Frontend)
-The `web/` directory is an autonomous Next.js 14 application. Deploy directly using Vercel CLI or Git integration:
-```bash
-cd web
-vercel
-```
-*Environment Variable:* Set `NEXT_PUBLIC_AI_BACKEND_URL` to your production backend API domain.
+The `web/` directory is an autonomous Next.js 14 application deployed live on Vercel with automatic reverse-proxy rewrites (`/api/backend/*` -> Cloud AI Backend).
 
 ---
 
