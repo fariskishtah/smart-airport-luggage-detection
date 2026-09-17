@@ -60,7 +60,7 @@ async def upload_and_analyze(
     line_start: Optional[str] = Form(None),
     line_end: Optional[str] = Form(None),
     direction: str = Form("any"),
-    min_track_age: int = Form(3),
+    min_track_age: int = Form(2),
     tracker: str = Form("bytetrack"),
 ):
     """Upload video directly and submit analysis job without requiring third-party storage."""
@@ -134,7 +134,7 @@ async def analyze_demo_clip():
         line_start=[0.55, 0.20],
         line_end=[0.55, 0.92],
         direction="any",
-        min_track_age=3,
+        min_track_age=2,
         tracker="bytetrack",
         image_size=640,
         model_name="yolo11n_coco",

@@ -30,7 +30,7 @@ export default function Home() {
     direction: "any",
     confidence: 0.25,
     iou: 0.50,
-    min_track_age: 3,
+    min_track_age: 2,
     tracker: "bytetrack",
   });
 
