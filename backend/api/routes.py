@@ -110,11 +110,11 @@ async def upload_and_analyze(
                 status_code=status.HTTP_400_BAD_REQUEST,
                 detail=f"Video duration ({round(probe_duration)}s) exceeds maximum allowed 180s (3 minutes). Please upload a shorter clip."
             )
-        if probe_width > 3840 or probe_height > 2160:
+        if probe_width > 2560 or probe_height > 1440:
             local_path.unlink(missing_ok=True)
             raise HTTPException(
                 status_code=status.HTTP_400_BAD_REQUEST,
-                detail=f"Video resolution ({probe_width}x{probe_height}) exceeds maximum server limits (4K). Please upload a 1080p or 720p video."
+                detail=f"Video resolution ({probe_width}x{probe_height}) exceeds maximum input resolution: 2560 × 1440. Please upload a 1440p, 1080p, or 720p video."
             )
     except HTTPException:
         raise

@@ -331,9 +331,31 @@ Processed H.264 Video + Auditable Events CSV
 Web Results & Live KPI Dashboard (Next.js on Vercel)
 ```
 
-### Live Production Deployment
-- **Production Web Application (Vercel):** [https://smart-airport-luggage-web.vercel.app](https://smart-airport-luggage-web.vercel.app)
-- **Production AI Inference Backend (Railway Cloud):** [https://smart-airport-luggage-backend-production.up.railway.app](https://smart-airport-luggage-backend-production.up.railway.app)
+## Production Status
+
+- **Frontend:** [https://smart-airport-luggage-web.vercel.app](https://smart-airport-luggage-web.vercel.app)
+- **Backend:** [https://smart-airport-luggage-backend-production.up.railway.app](https://smart-airport-luggage-backend-production.up.railway.app)
+- **GitHub:** [https://github.com/fariskishtah/smart-airport-luggage-detection](https://github.com/fariskishtah/smart-airport-luggage-detection)
+- **Version:** `v1.0-production`
+- **Status:** Stable graduation-project production release.
+
+### System Configuration & Specifications
+- **Deployment Model:** Ultralytics YOLO11n COCO Pretrained (`models/deployment/yolo11n_coco.pt`)
+- **Tracker:** ByteTrack Multi-Object Tracker (`configs/bytetrack_luggage.yaml`)
+- **Counting Engine:** Directional 2D signed distance line-crossing gate (3.0px deadband) and polygonal ROI zone counting
+- **Directional Metrics:** IN / OUT flow breakdown, total throughput, and per-class counts (`suitcase`, `backpack`, `handbag`)
+- **Local Dashboard:** Interactive Streamlit application (`app/app.py`) with native MPS / CUDA / CPU support
+- **Production Web UI:** Next.js 14 App Router on Vercel with Airport Operations Glassmorphism aesthetic
+- **Production AI Backend:** Containerized FastAPI on Railway Cloud with CPU-optimized PyTorch
+- **Video Processing:** Real-time single-threaded FFmpeg pipe streaming browser-playable H.264 `yuv420p` MP4 (`+faststart`)
+- **Auditable Ledgers:** Event ledger CSV (`events.csv`) and bounding-box evidence snapshots (`event_XXX.jpg`)
+- **Upload Limits:** 150 MB file size limit, 180 seconds maximum duration
+- **Maximum Input Resolution:** 2560 × 1440 (1440p); 4K uploads rejected upfront
+- **Concurrency Limit:** 1 active worker with FIFO queue and disk-persisted job state recovery
+
+### Live Endpoints
+- **Production Web Application:** [https://smart-airport-luggage-web.vercel.app](https://smart-airport-luggage-web.vercel.app)
+- **Production AI Inference Backend:** [https://smart-airport-luggage-backend-production.up.railway.app](https://smart-airport-luggage-backend-production.up.railway.app)
 - **Backend Health Check:** [https://smart-airport-luggage-web.vercel.app/health](https://smart-airport-luggage-web.vercel.app/health) (or [direct](https://smart-airport-luggage-backend-production.up.railway.app/health))
 - **Interactive Swagger / OpenAPI Docs:** [https://smart-airport-luggage-backend-production.up.railway.app/docs](https://smart-airport-luggage-backend-production.up.railway.app/docs)
 

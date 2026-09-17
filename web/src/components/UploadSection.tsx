@@ -136,7 +136,7 @@ export function UploadSection({
                   <span className="text-brandCyan underline">browse</span>
                 </p>
                 <p className="text-[11px] text-slate-400">
-                  Supports MP4, MOV, AVI, MKV (Up to 100 MB)
+                  Supports MP4, MOV, AVI, MKV (Up to 150 MB · Maximum input resolution: 2560 × 1440)
                 </p>
               </div>
             )}
