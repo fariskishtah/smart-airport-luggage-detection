@@ -3,6 +3,7 @@ from __future__ import annotations
 import logging
 import os
 import shutil
+import time
 from pathlib import Path
 from typing import Optional
 import urllib.request
@@ -126,3 +127,23 @@ class StorageService:
         job_out = OUTPUTS_DIR / job_id
         if job_out.exists():
             shutil.rmtree(job_out, ignore_errors=True)
+
+    @staticmethod
+    def cleanup_old_data(max_age_hours: float = 2.0) -> None:
+        """Clean up temporary upload and output directories older than max_age_hours."""
+        now = time.time()
+        max_age_sec = max_age_hours * 3600
+
+        for f in UPLOADS_DIR.glob("*"):
+            try:
+                if f.is_file() and (now - f.stat().st_mtime) > max_age_sec:
+                    f.unlink(missing_ok=True)
+            except Exception:
+                pass
+
+        for d in OUTPUTS_DIR.glob("*"):
+            try:
+                if d.is_dir() and (now - d.stat().st_mtime) > max_age_sec:
+                    shutil.rmtree(d, ignore_errors=True)
+            except Exception:
+                pass

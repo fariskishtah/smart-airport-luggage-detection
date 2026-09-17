@@ -34,7 +34,7 @@ export default function Home() {
     tracker: "bytetrack",
   });
 
-  // Polling loop for job progress
+  // Polling loop for job progress with timeout and failure recovery
   useEffect(() => {
     if (!activeJob || activeJob.status === "completed" || activeJob.status === "failed") {
       if (pollIntervalRef.current) {
@@ -44,12 +44,51 @@ export default function Home() {
       return;
     }
 
+    let consecutiveFailures = 0;
+    let lastProgress = activeJob.progress || 0;
+    let lastProgressChangeTime = Date.now();
+
     pollIntervalRef.current = setInterval(async () => {
       try {
         const updated = await fetchJobStatus(activeJob.job_id);
+        consecutiveFailures = 0;
+        if (Math.abs(updated.progress - lastProgress) > 0.001) {
+          lastProgress = updated.progress;
+          lastProgressChangeTime = Date.now();
+        }
         setActiveJob(updated);
-      } catch (err) {
+      } catch (err: any) {
+        consecutiveFailures++;
         console.error("Error polling job status:", err);
+        // If 5 consecutive poll failures, transition to graceful failed state
+        if (consecutiveFailures >= 5) {
+          setActiveJob({
+            job_id: activeJob.job_id,
+            status: "failed",
+            progress: 1.0,
+            current_step: "Connection lost or server restarted",
+            error: "Processing failed due to server resource limits. Please try a shorter or lower-resolution video.",
+          });
+          if (pollIntervalRef.current) {
+            clearInterval(pollIntervalRef.current);
+            pollIntervalRef.current = null;
+          }
+        }
+      }
+
+      // Watchdog: If stuck at the exact same progress for > 90 seconds during processing
+      if (Date.now() - lastProgressChangeTime > 90000 && activeJob.status === "processing") {
+        setActiveJob({
+          job_id: activeJob.job_id,
+          status: "failed",
+          progress: 1.0,
+          current_step: "Processing timed out",
+          error: "Processing timed out due to server resource limits. Please try a shorter or lower-resolution video.",
+        });
+        if (pollIntervalRef.current) {
+          clearInterval(pollIntervalRef.current);
+          pollIntervalRef.current = null;
+        }
       }
     }, 1500);
 

@@ -57,3 +57,4 @@ models/**/*.pt
 *.log
 .env
 .env*.local
+.vercel/

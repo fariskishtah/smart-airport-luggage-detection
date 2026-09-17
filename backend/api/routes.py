@@ -89,6 +89,34 @@ async def upload_and_analyze(
     actual_job_id = str(uuid.uuid4())[:8]
     try:
         local_path = StorageService.save_uploaded_file(file.file, file.filename, actual_job_id)
+        # Validate video integrity, duration, and resolution
+        probe_cap = cv2.VideoCapture(str(local_path))
+        if not probe_cap.isOpened():
+            probe_cap.release()
+            local_path.unlink(missing_ok=True)
+            raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Uploaded file is not a readable video.")
+
+        probe_width = int(probe_cap.get(cv2.CAP_PROP_FRAME_WIDTH))
+        probe_height = int(probe_cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
+        probe_fps = probe_cap.get(cv2.CAP_PROP_FPS) or 25.0
+        probe_frames = int(probe_cap.get(cv2.CAP_PROP_FRAME_COUNT))
+        probe_cap.release()
+
+        probe_duration = probe_frames / max(probe_fps, 1.0)
+        if probe_duration > 180.0:
+            local_path.unlink(missing_ok=True)
+            raise HTTPException(
+                status_code=status.HTTP_400_BAD_REQUEST,
+                detail=f"Video duration ({round(probe_duration)}s) exceeds maximum allowed 180s (3 minutes). Please upload a shorter clip."
+            )
+        if probe_width > 3840 or probe_height > 2160:
+            local_path.unlink(missing_ok=True)
+            raise HTTPException(
+                status_code=status.HTTP_400_BAD_REQUEST,
+                detail=f"Video resolution ({probe_width}x{probe_height}) exceeds maximum server limits (4K). Please upload a 1080p or 720p video."
+            )
+    except HTTPException:
+        raise
     except ValueError as exc:
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail=str(exc))
     except Exception as exc:
@@ -110,6 +138,7 @@ async def upload_and_analyze(
         output_video_path=out_video,
     )
     job_manager.jobs[actual_job_id] = record
+    record.save_to_disk()
     await job_manager.queue.put(actual_job_id)
 
     return JobSubmitResponse(
