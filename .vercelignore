@@ -1,0 +1,11 @@
+.venv/
+data/
+demo/
+models/
+runs/
+outputs/
+tests/
+scripts/
+docs/
+.git/
+backend/

@@ -18,7 +18,7 @@ router = APIRouter()
 ROOT = Path(__file__).resolve().parents[2]
 
 
-@router.get("/health")
+@router.api_route("/health", methods=["GET", "HEAD"])
 async def health_check():
     """Health monitoring endpoint reporting system, model, and tracker status."""
     import torch
@@ -179,7 +179,7 @@ async def get_job_status(job_id: str):
     return job
 
 
-@router.get("/api/jobs/{job_id}/video")
+@router.api_route("/api/jobs/{job_id}/video", methods=["GET", "HEAD"])
 async def get_job_video(job_id: str):
     """Stream the processed H.264 MP4 video."""
     out_dir = StorageService.get_job_output_dir(job_id)
@@ -193,7 +193,7 @@ async def get_job_video(job_id: str):
     )
 
 
-@router.get("/api/jobs/{job_id}/events.csv")
+@router.api_route("/api/jobs/{job_id}/events.csv", methods=["GET", "HEAD"])
 async def get_job_csv(job_id: str):
     """Download the auditable events CSV."""
     out_dir = StorageService.get_job_output_dir(job_id)
@@ -207,7 +207,7 @@ async def get_job_csv(job_id: str):
     )
 
 
-@router.get("/api/jobs/{job_id}/events/{filename}")
+@router.api_route("/api/jobs/{job_id}/events/{filename}", methods=["GET", "HEAD"])
 async def get_event_snapshot(job_id: str, filename: str):
     """Retrieve an event snapshot crop image."""
     out_dir = StorageService.get_job_output_dir(job_id)
