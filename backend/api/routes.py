@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import cv2
 import json
 import logging
 from pathlib import Path
