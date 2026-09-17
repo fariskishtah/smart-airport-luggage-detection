@@ -24,6 +24,10 @@ BLOB_TOKEN = os.getenv("BLOB_READ_WRITE_TOKEN", "")
 
 
 class StorageService:
+    STORAGE_DIR = STORAGE_DIR
+    UPLOADS_DIR = UPLOADS_DIR
+    OUTPUTS_DIR = OUTPUTS_DIR
+
     @staticmethod
     def get_job_output_dir(job_id: str) -> Path:
         job_dir = OUTPUTS_DIR / job_id
